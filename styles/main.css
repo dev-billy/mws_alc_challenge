@@ -8,12 +8,61 @@ body{
     padding:3rem;
     background:#ECD7D7;
     width:80%;
-    max-width: 700px;
+   
     margin:0 auto;
 }
-.currentWeather{
-    border: solid 1px;
+
+/* main */
+
+main{
     display: flex;
     flex-direction: column;
+    
 }
+.main_weather_box{
+    display:flex;
+    padding:1rem;
+    justify-content: space-around;
+}
+
+.line{
+    border-right: solid 2px;
+}
+
+.current_weather{
+    font-size:.75rem;
+    padding:.25rem;
+    font-weight:200;
+    text-align: center;
+}
+
+.icon img{
+    margin:0 auto;
+    width:50px;
+    align-self: center;
+    justify-self: center;
+}
+
+.degree_side .temp{
+    font-size:4rem;
+    font-weight:300;
+    align-self: center;
+}
+
+.weather_day h2{
+    font-size:1.5rem;
+    text-align:center;
+    padding:.25rem;
+}
+
+.weather_location h3{
+    font-size:1rem;
+    font-weight:300;
+    padding:.75rem;
+    text-align:right;
+}
+
+/* end main */
+
+
 
