@@ -1,6 +1,7 @@
 const API_KEY = '9f18e84e6874fc2fb81e7bb28c932f88';
+let searchedLocation = 'New York'
 
-const openWeatherApi = 'http://api.openweathermap.org/data/2.5/forecast?q=London&appid='+API_KEY;
+const openWeatherApi = `http://api.openweathermap.org/data/2.5/forecast?q=${searchedLocation}&appid=${API_KEY}`;
 
 const weatherLocation = document.getElementById('weather_location');
 
@@ -26,6 +27,7 @@ let promise = fetch(openWeatherApi)
                 .then(data =>{
                     return data.json();
                 }).then(results =>{
+                    weatherLocation.innerHTML = results.city.name + ', ' + results.city.country;
 
                     let myRes = [];
                     const date = new Date();
@@ -38,5 +40,15 @@ let promise = fetch(openWeatherApi)
                             currentDay += 1;
                         }
                   });
-                  return myRes;
+                    day0Temp.innerHTML=Math.ceil(myRes[0].main.temp - 273.15) + ' °C';
+                    day1Temp.innerHTML=Math.ceil(myRes[1].main.temp - 273.15) + ' °C';
+                    day2Temp.innerHTML=Math.ceil(myRes[2].main.temp - 273.15) + ' °C';
+                    day3Temp.innerHTML=Math.ceil(myRes[3].main.temp - 273.15) + ' °C';
+                    day4Temp.innerHTML=Math.ceil(myRes[4].main.temp - 273.15) + ' °C';
+
+                    day0Weather.innerHTML=myRes[0].weather[0].main;
+                    day1Weather.innerHTML=myRes[1].weather[0].main;
+                    day2Weather.innerHTML=myRes[2].weather[0].main;
+                    day3Weather.innerHTML=myRes[3].weather[0].main;
+                    day4Weather.innerHTML=myRes[4].weather[0].main;
                 })
