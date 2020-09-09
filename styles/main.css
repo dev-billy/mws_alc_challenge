@@ -114,6 +114,38 @@ main{
     margin-top:20px;
 }
 
+/* search box styles */
+.search_box{
+    display:flex;
+    width:80%;
+    max-width:250px;
+    margin:20px auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#search_input{
+    padding:.35rem;
+    background:none;
+    border: solid 1px black;
+    border-radius:10px;
+}
+#search_input:active,#search_input:focus{
+    background:rgba(255, 255, 255, 0.658);
+}
+#search_btn{
+    padding:5px;
+    border:none;
+    border-radius: 5px;
+    background:rgb(7, 151, 207);
+    color:white;
+    font-size:.85rem;
+    margin-top:10px;
+}
+#search_btn:hover{
+    cursor: pointer;
+
+}
+
 
 .footer{
     margin-top:20px;
