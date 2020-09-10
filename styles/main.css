@@ -169,11 +169,28 @@ main{
     display:none;
 }
 
+.socials{
+    display:flex;
+    flex-direction:row ;
+    width:10vh;
+    margin:20px auto;
+    
+}
+.ig{
+    margin-right:10px;
+}
+.ig:hover{
+    cursor: pointer;
+}
+.twitter{
+    cursor: pointer;
+}
 
 .footer{
     margin-top:0%;
     text-align: center;
 }
+
 a,a:active,a:hover,a:visited{
     color:#f1f1f1;
     cursor: pointer;
@@ -206,55 +223,51 @@ a,a:active,a:hover,a:visited{
 
 /* Styles for desktop view */
 @media only screen and (min-width: 992px) {
-#dynamicContent{
-    height:100vh;
+        #dynamicContent{
+            height:100vh;
+        }
+
+        .nextWeather{
+            flex-direction: column;
+            position:relative;
+            top:-50vh;
+            
+            margin-top:5px;
+        }
+        main{
+            position:relative;
+            top:20vh;
+            padding:0;
+            width:40%;
+        }
+        .nextWeather_box{
+            margin-bottom:5px;
+            padding:0.1rem;
+        }
+        .next_weather{
+            letter-spacing: 4px;
+            padding:0;
+            width:60px;
+        }
+        #search_input{
+            width:100%;
+        }
+        .search_box{
+            width:50%;
+            display:flex;
+            justify-content: space-between;
+            margin:30px auto;
+        }
+
+        #search_btn{
+            display: block;
+            padding:5px 15px;
+            border:none;
+            border-radius: 5px;
+            background:rgb(7, 151, 207);
+            color:white;
+            font-size:.85rem;
+            margin-left:20px;
+        }
 }
 
-.nextWeather{
-    flex-direction: column;
-    position:relative;
-    top:-50vh;
-    
-    margin-top:5px;
-}
-main{
-    position:relative;
-    top:20vh;
-    padding:0;
-    width:40%;
-}
-.nextWeather_box{
-    margin-bottom:5px;
-    padding:0.1rem;
-}
-.next_weather{
-    letter-spacing: 4px;
-    padding:0;
-    width:60px;
-}
-#search_input{
-    width:100%;
-}
-.search_box{
-    width:50%;
-    display:flex;
-    justify-content: space-between;
-    margin:30px auto;
-}
-
-#search_btn{
-    display: block;
-    padding:5px 15px;
-    border:none;
-    border-radius: 5px;
-    background:rgb(7, 151, 207);
-    color:white;
-    font-size:.85rem;
-    margin-left:20px;
-}
-
-
-
-
-
-  }

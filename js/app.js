@@ -1,3 +1,6 @@
+// import 'dotenv';
+// dotenv.config();
+
 const searchBtn = document.getElementById('search_btn');
 const searchInput = document.getElementById('search_input');
 const dynamicContent = document.getElementById('dynamicContent');
@@ -63,7 +66,6 @@ function runUrl(userSearch) {
                         }
                     })
                     .then(data =>{
-                            console.log(data.status)
                             return data.json();                    
                     }).then(results =>{
                         loader.style.display = 'none';
