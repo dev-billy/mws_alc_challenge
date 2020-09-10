@@ -1,6 +1,12 @@
 const searchBtn = document.getElementById('search_btn');
 const searchInput = document.getElementById('search_input');
 
+searchInput.addEventListener('keyup',(e)=>{
+    if(e.keyCode === 13){
+        e.preventDefault();
+        searchBtn.click();
+    }
+});
 searchBtn.addEventListener('click',()=>{
     if(searchInput.value == ''){
         alert('Please Enter a city');
@@ -46,24 +52,25 @@ function runUrl(userSearch) {
                                                                         + date.getFullYear();
 
                         let myList = results.list.forEach(item => {
-                            let apiDay = new Date(item.dt *1000).getUTCDay();
+                            let apiDate = new Date(item.dt * 1000);
+                            let apiDay = apiDate.getUTCDay();
+                            currentDay = date.getUTCDay();
                             if(currentDay == apiDay){
-                                myRes.push(item);   
-                                currentDay = currentDay + 1;
-                                apiDay = apiDay +1;
-                            }else{
-                                return
+                                myRes.push(item);
+                                date.setDate(date.getDate() + 1);
                             }
+       
                     });
+
                     
 
                     for(let i =0; i<5; i++){
                         document.getElementById(daysTemp[i]).innerHTML = Math.ceil(myRes[i].main.temp - 273.15) + ' °C'; 
                         document.getElementById(daysWeather[i]).innerHTML = myRes[i].weather[0].main;
                         let resDay = new Date(myRes[i].dt * 1000).getUTCDay();
-                        
-                        if(i != 0 && i <=5){
-                            document.getElementById(daysDate[i]).innerHTML = dayShortArr[resDay];
+                        let counter = i;
+                        if(counter != 0 && i <=5){
+                            document.getElementById(daysDate[counter]).innerHTML = dayShortArr[resDay];
                         }
                     }                 
                 })

@@ -8,11 +8,17 @@
 </head>
 <body>
     <h1>Sudo Weather App</h1>
+    <div class="search_box">
+        <input type="text" id="search_input" placeholder="New York">
+        <button id="search_btn">Search</button>
+    </div>
+    <div id='loader'>
+        <h2 id='before-search'>Enter a city to start the search</h2>
+        <h2 id='on-search'>Searching ...</h2>
+    </div>
+    <div id='dynamicContent'>
     <main>
-        <div class="search_box">
-            <input type="text" id="search_input">
-            <button id="search_btn">Search</button>
-        </div>
+      
         <div class="main_weather_box">
             <div class="icon_side">
                 <div class="icon">
@@ -23,7 +29,7 @@
             </div>
             <div class="line"></div>
             <div class="degree_side">
-                <h3 class="temp" id="day_temp0">5&deg;</h3>
+                <h3 class="temp" id="day_temp0">25&deg;C</h3>
             </div>
         </div>
         <div class="weather_day">
@@ -92,6 +98,7 @@
         </div>
         
    </div>
+</div>
    <div class="socials">
        <div class="ig"></div>
        <div class="twitter"></div>
