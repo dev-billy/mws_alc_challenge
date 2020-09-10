@@ -73,7 +73,7 @@ main{
 
 .icon img{
     margin:10px auto;
-    width:80px;
+    width:90px;
     fill:#f1f1f1;
     align-self: center;
     justify-self: center;
@@ -134,7 +134,7 @@ main{
 }
 .next img{
     margin:10px auto;
-    width:40px;
+    width:60px;
 }
 .next_weather{
     font-weight:400;
@@ -213,7 +213,7 @@ a,a:active,a:hover,a:visited{
 .nextWeather{
     flex-direction: column;
     position:relative;
-    top:-35vh;
+    top:-50vh;
     
     margin-top:5px;
 }

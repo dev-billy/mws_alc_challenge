@@ -4,16 +4,14 @@ const dynamicContent = document.getElementById('dynamicContent');
 const beforeSearch = document.getElementById('before-search');
 const loader = document.getElementById('loader');
 const onSearch = document.getElementById('on-search');
+const onFail = document.getElementById('on-fail');
+
 
 dynamicContent.style.display = 'none';
 
 searchInput.addEventListener('keyup',(e)=>{
     if(e.keyCode === 13){
         e.preventDefault();
-        loader.style.display = 'block';
-      
-        beforeSearch.style.display = 'none';
-        onSearch.style.display = 'block';
         searchBtn.click();
     }
 });
@@ -22,7 +20,11 @@ searchBtn.addEventListener('click',()=>{
     if(searchInput.value == ''){
         alert('Please Enter a city');
     }else{
-        
+        loader.style.display = 'block';
+        onFail.innerHTML = '';
+        onFail.style.display = 'none';
+        beforeSearch.style.display = 'none';
+        onSearch.style.display = 'block';
         runUrl(searchInput.value);
     }
 });
@@ -46,12 +48,27 @@ function runUrl(userSearch) {
 
     const monthsArray = ['January','February','March','May','June','July','August','September','October','November','December'];
 
+    const iconArr = ['weather_icon0','weather_icon1','weather_icon2','weather_icon3','weather_icon4']; 
 
     let promise = fetch(openWeatherApi)
+                    .then(response =>{
+                        if(!response.ok){
+                            loader.style.display = 'block';
+                            beforeSearch.style.display ='none';
+                            onSearch.style.display = 'none';
+                            onFail.style.display = 'block';
+                            onFail.innerHTML = `Error: ${response.status}, ${response.statusText}`;
+                        }else{
+                            return response;
+                        }
+                    })
                     .then(data =>{
-                        return data.json();
+                            console.log(data.status)
+                            return data.json();                    
                     }).then(results =>{
                         loader.style.display = 'none';
+                        onSearch.style.display ='none';
+                        onFail.style.display = 'none';
                         dynamicContent.style.display = 'block';
                         
                         weatherLocation.innerHTML = results.city.name + ', ' + results.city.country;
@@ -83,12 +100,17 @@ function runUrl(userSearch) {
                     for(let i =0; i<5; i++){
                         document.getElementById(daysTemp[i]).innerHTML = Math.ceil(myRes[i].main.temp - 273.15) + ' °C'; 
                         document.getElementById(daysWeather[i]).innerHTML = myRes[i].weather[0].main;
+                        document.getElementById(iconArr[i]).src = `http://openweathermap.org/img/wn/${myRes[i].weather[0].icon}@2x.png`;
                         let resDay = new Date(myRes[i].dt * 1000).getUTCDay();
                         let counter = i;
                         if(counter != 0 && i <=5){
                             document.getElementById(daysDate[counter]).innerHTML = dayShortArr[resDay];
                         }
                     }                 
+                }).catch(error =>{
+                    dynamicContent.style.display = 'none';
+                    
+                    
                 })
 }
     
