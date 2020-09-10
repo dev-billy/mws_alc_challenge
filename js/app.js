@@ -1,12 +1,23 @@
 const searchBtn = document.getElementById('search_btn');
 const searchInput = document.getElementById('search_input');
+const dynamicContent = document.getElementById('dynamicContent');
+const beforeSearch = document.getElementById('before-search');
+const loader = document.getElementById('loader');
+const onSearch = document.getElementById('on-search');
+
+dynamicContent.style.display = 'none';
 
 searchInput.addEventListener('keyup',(e)=>{
     if(e.keyCode === 13){
         e.preventDefault();
+        loader.style.display = 'block';
+      
+        beforeSearch.style.display = 'none';
+        onSearch.style.display = 'block';
         searchBtn.click();
     }
 });
+
 searchBtn.addEventListener('click',()=>{
     if(searchInput.value == ''){
         alert('Please Enter a city');
@@ -19,6 +30,7 @@ searchBtn.addEventListener('click',()=>{
 function runUrl(userSearch) {
     const API_KEY = '9f18e84e6874fc2fb81e7bb28c932f88';
     let searchedLocation = userSearch;
+   
 
     const openWeatherApi = `http://api.openweathermap.org/data/2.5/forecast?q=${searchedLocation}&appid=${API_KEY}`;
 
@@ -39,10 +51,13 @@ function runUrl(userSearch) {
                     .then(data =>{
                         return data.json();
                     }).then(results =>{
+                        loader.style.display = 'none';
+                        dynamicContent.style.display = 'block';
+                        
                         weatherLocation.innerHTML = results.city.name + ', ' + results.city.country;
 
                         let myRes = [];
-
+                        
                         const date = new Date();
                         let currentDay = date.getUTCDay();
 
@@ -55,6 +70,7 @@ function runUrl(userSearch) {
                             let apiDate = new Date(item.dt * 1000);
                             let apiDay = apiDate.getUTCDay();
                             currentDay = date.getUTCDay();
+                            
                             if(currentDay == apiDay){
                                 myRes.push(item);
                                 date.setDate(date.getDate() + 1);

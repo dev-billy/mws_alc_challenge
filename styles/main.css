@@ -6,12 +6,15 @@
 
 body{
     padding:1.25rem;
-    background:#ECD7D7;
+    background:#213D67;
+  
     width:100%;
     margin:0 auto;
 }
 h1{
     font-size:2.25rem;
+    color:#f1f1f1;
+    font-weight: 100;
     text-align: center;
 }
 /* search box styles */
@@ -26,8 +29,9 @@ h1{
     width:80%;
     font-size:1.15rem;
     background:none;
+    color: #f1f1f1c2;
     margin:0 auto;
-    border: solid 1.5px black;
+    border: solid 1.8px  #f1f1f1;;
     border-radius:10px;
 }
 
@@ -62,19 +66,22 @@ main{
 }
 
 .line{
-    border-right: solid 2px;
+    border-right: solid 2px#f1f1f1;
 }
 
 .current_weather{
     font-size:1.2rem;
     padding:.15rem;
-    font-weight:900;
+    font-weight:200;
+    letter-spacing: 2px;
+    color:#f1f1f1;
     text-align: center;
 }
 
 .icon img{
     margin:10px auto;
     width:80px;
+    fill:#f1f1f1;
     align-self: center;
     justify-self: center;
 }
@@ -83,20 +90,25 @@ main{
     font-size:4rem;
     font-weight:400;
     margin-top:20px;
+    color:#f1f1f1;
     align-self: center;
 }
 
 .weather_day h2{
     font-size:1.5rem;
     text-align:center;
+    font-weight:200;
+    letter-spacing: 1.2px;
     margin:30px 0;
     padding:.25rem;
+    color:#f1f1f1;
 }
 
 .weather_location h3{
     font-size:1.3rem;
-    font-weight:500;
+    font-weight:100;
     padding:.75rem;
+    color:#f1f1f1;
     text-align:center;
 }
 
@@ -106,7 +118,7 @@ main{
     display: flex;
     flex-direction: row;
     width:100%;
-    
+    color:#f1f1f1;
     margin:0 auto;
     justify-content: space-between;
     flex-wrap:wrap;
@@ -150,14 +162,30 @@ main{
     margin-top:30px;
 }
 
+#loader{
+    margin:40px auto;
+    background: white;
+    padding:2rem;
+    max-width:400px;
+    text-align: center;
+    border-radius:20px;
 
+
+}
+#on-search{
+    display:none;
+}
 
 
 .footer{
     margin-top:0%;
     text-align: center;
 }
-
-#dynamicContent{
-    display: none;
+a,a:active,a:hover,a:visited{
+    color:#f1f1f1;
+    cursor: pointer;
 }
+
+/* #dynamicContent{
+    display:block ;
+} */
