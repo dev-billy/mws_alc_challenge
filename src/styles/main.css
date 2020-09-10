@@ -34,7 +34,10 @@ h1{
     border: solid 1.8px  #f1f1f1;;
     border-radius:10px;
 }
-
+#search_input:focus{
+    outline:none;
+    box-shadow: white 0px 0px 5px 0px;
+}
 #search_btn{
     display:none;
 }
