@@ -37,13 +37,6 @@ h1{
 
 #search_btn{
     display:none;
-    /* padding:5px;
-    border:none;
-    border-radius: 5px;
-    background:rgb(7, 151, 207);
-    color:white;
-    font-size:.85rem;
-    margin-top:10px; */
 }
 #search_btn:hover{
     cursor: pointer;
@@ -186,9 +179,7 @@ a,a:active,a:hover,a:visited{
     cursor: pointer;
 }
 
-/* #dynamicContent{
-    display:block ;
-} */
+
 
 #on-search {
     width: 150px;
@@ -211,4 +202,59 @@ a,a:active,a:hover,a:visited{
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+/* Styles for desktop view */
+@media only screen and (min-width: 992px) {
+#dynamicContent{
+    height:100vh;
+}
+
+.nextWeather{
+    flex-direction: column;
+    position:relative;
+    top:-35vh;
+    
+    margin-top:5px;
+}
+main{
+    position:relative;
+    top:20vh;
+    padding:0;
+    width:40%;
+}
+.nextWeather_box{
+    margin-bottom:5px;
+    padding:0.1rem;
+}
+.next_weather{
+    letter-spacing: 4px;
+    padding:0;
+    width:60px;
+}
+#search_input{
+    width:100%;
+}
+.search_box{
+    width:50%;
+    display:flex;
+    justify-content: space-between;
+    margin:30px auto;
+}
+
+#search_btn{
+    display: block;
+    padding:5px 15px;
+    border:none;
+    border-radius: 5px;
+    background:rgb(7, 151, 207);
+    color:white;
+    font-size:.85rem;
+    margin-left:20px;
+}
+
+
+
+
+
   }
