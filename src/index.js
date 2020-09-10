@@ -1,5 +1,4 @@
-// import 'dotenv';
-// dotenv.config();
+
 
 const searchBtn = document.getElementById('search_btn');
 const searchInput = document.getElementById('search_input');
