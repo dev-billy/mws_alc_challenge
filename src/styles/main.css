@@ -160,13 +160,21 @@ main{
 
 #loader{
     margin:40px auto;
-    background: white;
+    /* background: white; */
     padding:2rem;
     max-width:400px;
     text-align: center;
-    border-radius:20px;
+    /* border-radius:20px; */
 
 
+}
+#before-search{
+    color: white;
+    text-align:center;
+    width:100%;
+    margin:20px auto;
+    font-size:1rem;
+    font-weight:100;
 }
 #on-search{
     display:none;
@@ -176,7 +184,7 @@ main{
     display:flex;
     flex-direction:row ;
     width:10vh;
-    margin:20px auto;
+    margin:100px auto 20px auto;
     
 }
 .ig{

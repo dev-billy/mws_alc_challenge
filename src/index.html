@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <h1>Sudo Weather App</h1>
+    <div class="search_box">
+        <input type="text" id="search_input" placeholder="New York">
+        <button id="search_btn">Search</button>
+    </div>
+    <h2 id='before-search'>Enter a city to start the search</h2>
+    <div id='loader'>
+       
+        <h2 id='on-search'></h2>
+        <h2 id='on-fail'></h2>
+    </div>
+    <div id='dynamicContent'>
+    <main>
+      
+        <div class="main_weather_box">
+            <div class="icon_side">
+                <div class="icon">
+                    <img id='weather_icon0' src="#" alt="weather condidtion" />
+                </div>
+                <h4 class="current_weather" id="day_weather0">WINTER</h4>
+            </div>
+            <div class="line"></div>
+            <div class="degree_side">
+                <h3 class="temp" id="day_temp0">25&deg;C</h3>
+            </div>
+        </div>
+        <div class="weather_day">
+            <h2 id="date0">Monday, 30 February 2020</h2>
+        </div>
+        <div class="weather_location">
+            <h3 id="weather_location">New York, USA </h3>
+        </div>
+    </main>
+   <div class="nextWeather">
+        <div class="nextWeather_box">
+            <div class="nextWeather_box_left">
+                <div class="next icon">
+                    <img id='weather_icon1' src="#" alt="weather condidtion" />
+                </div>
+                <h4 class="next_weather" id="day_weather1">WINTER</h4>
+            </div>
+            <div class="line"></div>
+            <div class="nextWeather_box_right">
+                <h3 class="nextWeather_day" id="day1">TUE</h3>
+                <h2 class="nextWeather_temp" id="day_temp1">2&deg;</h2>
+            </div>
+        </div>
+        <div class="nextWeather_box">
+            <div class="nextWeather_box_left">
+                <div class="next icon">
+                    <img id='weather_icon2' src="#" alt="weather condidtion"/>
+                </div>
+                <h4 class="next_weather" id="day_weather2">WINTER</h4>
+            </div>
+            <div class="line"></div>
+            <div class="nextWeather_box_right">
+                <h3 class="nextWeather_day" id="day2">WED</h3>
+                <h2 class="nextWeather_temp" id="day_temp2">2&deg;</h2>
+            </div>
+        </div>
+        <div class="nextWeather_box">
+            <div class="nextWeather_box_left">
+                <div class="next icon">
+                    <img id='weather_icon3' src="#" alt="weather condidtion"/>
+                </div>
+                <h4 class="next_weather" id="day_weather3">WINTER</h4>
+            </div>
+            <div class="line"></div>
+            <div class="nextWeather_box_right">
+                <h3 class="nextWeather_day" id="day3">THU</h3>
+                <h2 class="nextWeather_temp" id="day_temp3">2&deg;</h2>
+            </div>
+        </div>
+        <div class="nextWeather_box">
+            <div class="nextWeather_box_left">
+                <div class="next icon">
+                    <img id='weather_icon4' src="#" alt="weather condidtion" />
+                </div>
+                <h4 class="next_weather" id="day_weather4">WINTER</h4>
+            </div>
+            <div class="line"></div>
+            <div class="nextWeather_box_right">
+                <h3 class="nextWeather_day" id="day4">FRI</h3>
+                <h2 class="nextWeather_temp" id="day_temp4">2&deg;</h2>
+            </div>
+        </div>
+        
+   </div>
+</div>
+   <div class="socials">
+       <div class="ig"><img src="./assets/icons/instagram-brands.png" alt="instagram" width='20'></div>
+       <div class="twitter"><img src="./assets/icons/twitter-brands.png" alt="twitter" width='20'></div>
+       
+   </div>
+   <div class="footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+
+   <script src='./index.js'></script>
+</body>
+</html>
